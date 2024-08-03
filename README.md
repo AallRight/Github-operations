@@ -82,6 +82,7 @@ git push -u origin main
    ```bash
    clip < ~/.ssh/id_rsa.pub
    ```
+   复制rsa.pub的内容到GitHub上
 
 2. **登录到 GitHub**:
    - 打开 GitHub 网站并登录你的账户。
