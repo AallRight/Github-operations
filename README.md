@@ -7,3 +7,9 @@
 ssh -T git@github.com
 ```
 <br>
+下载仓库东西
+
+```
+git clone https://github.com/username/repository.git
+```
+<br>
