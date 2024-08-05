@@ -1,0 +1,88 @@
+## 继承类例子
+```
+
+#include <iostream>
+using namespace std;
+
+// 基类（父类）
+class Animal {
+public:
+    void eat() {
+        cout << "Animal eats food." << endl;
+    }
+};
+
+// 派生类（子类），继承自Animal类
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Dog barks." << endl;
+    }
+};
+
+int main() {
+    // 创建一个Dog对象
+    Dog myDog;
+
+    // 调用继承自Animal类的方法
+    myDog.eat();
+
+    // 调用子类独有的方法
+    myDog.bark();
+
+    return 0;
+}
+
+```
+
+实例化
+
+```
+#include <iostream>
+
+// 基类 Animal
+class Animal {
+public:
+    // 虚函数 makeSound
+    virtual void makeSound() {
+        std::cout << "Animal makes a sound" << std::endl;
+    }
+};
+
+// 派生类 Dog
+class Dog : public Animal {
+public:
+    // 重写基类的虚函数 makeSound
+    void makeSound() override {
+        std::cout << "Dog barks" << std::endl;
+    }
+};
+
+// 派生类 Cat
+class Cat : public Animal {
+public:
+    // 重写基类的虚函数 makeSound
+    void makeSound() override {
+        std::cout << "Cat meows" << std::endl;
+    }
+};
+
+int main() {
+    // 创建基类指针，指向派生类对象
+    Animal *animalPtr;
+
+    // 创建 Dog 对象，并将其地址赋给 animalPtr
+    Dog dog;
+    animalPtr = &dog;
+    // 调用虚函数，实际调用的是 Dog 类中的 makeSound 函数
+    animalPtr->makeSound();
+
+    // 创建 Cat 对象，并将其地址赋给 animalPtr
+    Cat cat;
+    animalPtr = &cat;
+    // 调用虚函数，实际调用的是 Cat 类中的 makeSound 函数
+    animalPtr->makeSound();
+
+    return 0;
+}
+```
